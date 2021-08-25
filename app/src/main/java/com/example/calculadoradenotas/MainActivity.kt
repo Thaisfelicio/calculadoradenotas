@@ -1,6 +1,7 @@
 package com.example.calculadoradenotas
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -20,11 +21,16 @@ class MainActivity : AppCompatActivity() {
             val nota2: Int = Integer.parseInt( nota2.text.toString())
             val media: Int = (nota1 + nota2)/2
             val faltas: Int = Integer.parseInt(faltas.text.toString())
-            if (media >=6 && faltas <=10) {
+             if (media >=6 && faltas <=10)
+             {
                 resultado.setText("Aluno foi Aprovado" + "\n" + "Nota Final:" + media + "\n" + "Faltas:" + faltas)
-            }else {
+                 resultado.setTextColor(Color.GREEN)
+             }
+             else
+             {
                 resultado.setText("Aluno foi Reprovado"+"\n"+"Nota Final:"+media+"\n"+"Faltas:"+faltas)
-            }
+                 resultado.setTextColor(Color.RED)
+             }
         }
     }
 }
